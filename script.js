@@ -96,3 +96,7 @@ else {
 const weight = 60;
 let isObese;
 weight >= 100 ? isObese = true : isObese = false;
+
+const aGe = 26;
+const isADult = aGe >= 18 ? true : false;
+
