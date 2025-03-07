@@ -74,3 +74,22 @@ function getMonthOfYear(number) {
             console.log("Out of bounds exception (1-12)");
     }
 }
+
+const age = 15
+let isAdult;
+if (age >= 18) {
+    isAdult = true;
+}
+else {
+    isAdult = false;
+}
+
+const number = 5;
+let isEven;
+if (number % 2 === 0) {
+    isEven = true;
+}
+else {
+    isEven = false;
+}
+
