@@ -93,3 +93,6 @@ else {
     isEven = false;
 }
 
+const weight = 60;
+let isObese;
+weight >= 100 ? isObese = true : isObese = false;
