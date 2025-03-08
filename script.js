@@ -107,3 +107,37 @@ document.getElementById("MyP").textContent = "Hello World!";
 document.getElementById("MyP").style.color = "red";
 document.getElementById("peep").textContent = "Peep this Nigga!!"
 document.getElementById("peep").style.backgroundColor = "grey"
+
+//Reviewing Datatypes in JavaScript .
+//1.Numbers
+
+let x = 26
+let y = 5000
+let z = 3.5
+
+console.log(`I am ${x} years old.`);
+console.log(`2 pairs of sticks cost ksh${y}.`);
+console.log(`I got a gpa score of: ${z}.`);
+console.log(typeof x);
+console.log(typeof y);
+console.log(typeof z);
+
+//2.Strings
+
+let firstName = "Symba";
+console.log(typeof firstName);
+console.log(firstName);
+console.log(`My name is ${firstName}.`);
+//Strings can include numbers but not for any mathematical functions.
+
+//3.Booleans
+
+let gay = true;
+let poor = false;
+console.log(typeof poor);
+console.log(typeof gay);
+console.log(`Alfa is poor: ${poor}`);
+console.log(`Chimano is gay: ${gay}`);
+//Booleans are used as a sort of flag.
+
+
