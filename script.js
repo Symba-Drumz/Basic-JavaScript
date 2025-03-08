@@ -103,3 +103,7 @@ const aGe = 26;
 const isADult = aGe >= 18 ? true : false;
 console.log(isADult);
 
+document.getElementById("MyP").textContent = "Hello World!";
+document.getElementById("MyP").style.color = "red";
+document.getElementById("peep").textContent = "Peep this Nigga!!"
+document.getElementById("peep").style.backgroundColor = "grey"
