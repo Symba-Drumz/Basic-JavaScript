@@ -141,3 +141,11 @@ console.log(`Chimano is gay: ${gay}`);
 //Booleans are used as a sort of flag.
 
 
+document.getElementById("p1").textContent = `My name is ${firstName}.`;
+document.getElementById("p2").textContent = `I am ${x} years old.`;
+document.getElementById("p3").textContent = `My two pairs of drumsticks cost ksh ${y}.`;
+document.getElementById("p4").textContent = `Is poor: ${poor}.`;
+//I have successfully displayed the variables on the html page, keyed in by the user in JavaScript by the help of document.getElementById("id of html element of choice").textContent = `template literal with interpolated variable.
+
+
+
