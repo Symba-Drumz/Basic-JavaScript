@@ -92,11 +92,14 @@ if (number % 2 === 0) {
 else {
     isEven = false;
 }
+console.log(isEven);
 
 const weight = 60;
 let isObese;
 weight >= 100 ? isObese = true : isObese = false;
+console.log(isObese);
 
 const aGe = 26;
 const isADult = aGe >= 18 ? true : false;
+console.log(isADult);
 
