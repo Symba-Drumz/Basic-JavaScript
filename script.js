@@ -108,7 +108,7 @@ document.getElementById("MyP").style.color = "red";
 document.getElementById("peep").textContent = "Peep this Nigga!!"
 document.getElementById("peep").style.backgroundColor = "grey"
 
-//Reviewing Datatypes in JavaScript .
+//REVIEWING DATATYPES IN JAVASCRIPT .
 //1.Numbers
 
 let x = 26
@@ -149,3 +149,70 @@ document.getElementById("p4").textContent = `Is poor: ${poor}.`;
 
 
 
+//REVIEWING OPERATORS IN JAVASCRIPT.
+//1.Arithmetic Operators = operands (values, variables, e.t.c), operators = (+, -, *, /, **, %, ++, --)
+                           
+let students = 31;
+
+//students = students + 5;
+//students = students - 5;
+//students = students * 5;
+//students = students / 5;
+
+// exponents
+//students = students ** 2;
+
+//modulus
+//modulus requires a the user to set a new variable to the remainder of the division of the two numbers.
+//let extraStudents = students % 3;
+
+//Augmented assignment operators help prevent the user from repeating the variable name.
+
+//students += 5;
+//students -= 5;
+//students *= 5;
+//students /= 5;
+//students **= 2;
+//students %= 3;
+
+//Increment(++) and Decrement(--) Operators
+
+//students++;
+//students--;
+console.log(students);
+
+//Operator Precedence: BIDMAS
+/*
+operator precedence
+1. Parenthesis - ()
+2. Exponents - **
+3. Multiplication and Division and Modulo - *, /, %
+4. Addition and Subtraction : +, -
+*/
+let result = 1 + 2 * 3  + 4 ** 2
+console.log(result);
+
+
+//HOW TO ACCEPT A USER INPUT IN JAVASCRIPT.
+//1. Easy way = window prompt
+//2. Hard way = HTML textbox
+
+//1.Window Prompt
+//let username = window.prompt("Enter your name: ");
+//console.log(username);
+
+//let ageOfUser = window.prompt("Enter your age: ")
+//console.log(ageOfUser);
+
+//2.HTML textbox (The Professional way)
+let username;
+let aGE;
+
+document.getElementById("mySubmit").onclick = function () {
+    username = document.getElementById("mytext").value;
+    aGE = document.getElementById("myage").value;
+
+
+console.log(username);
+console.log(aGE);
+}
