@@ -508,3 +508,438 @@ const sum = (parameter1, parameter2) => {
 
   iReturnThings(function () {'Hello,'+ 'world!'});
   //I must revisit all Function applications in JavaScript.
+
+  function myFunc() {
+    return 42;
+  }
+
+  const mySum = myFunc() * 2; // both these functions and variable expressions exist in the global scope.
+  mySum;
+
+  // we cant reference anything declared within a function as that may bring an error.
+// Variables declared without const and let are automatically global scoped as demonstrated below;
+
+if (true) {
+    firstName = "Alfa"
+    
+}
+firstName;
+
+//Even inside a Function, a variable declared without Const and let are still still remains globally scoped
+
+function bankAccount() {
+    secretPassword = "il0v3pupp135";
+  
+    return "bankAccount() function invoked!";
+  }
+  
+  bankAccount();
+  // => "bankAccount() function invoked!"
+  
+  secretPassword;
+  // => "il0v3pupp135"
+
+  function myKey(){
+    const myNum = 46;
+    return myNum * 2;
+  }
+  myKey();
+
+  // Demonstrating access to globally declared variables within another Function
+
+  const globalVar = 2; //This is a globally declared  variable 
+
+  function firstFunk() {
+    const firstVar = 3  // this is a variable declared inside a function.
+    return globalVar + firstVar;
+
+  }
+  firstFunk();
+  //Because of the way functions can look up variables declared in outer scopes, we say they have access to a scope chain. 
+
+  const globalAriab = 4
+
+  function firstFun() {
+    const firstAriab = 7
+
+    function secondFun() {
+        const secondAriab = 3
+        return secondAriab + firstAriab + globalAriab
+    }
+    const resultFromSecondFun = secondFun();
+    return resultFromSecondFun;
+    
+  }
+  firstFun();
+// Another demonstration of the scope accessibility
+
+const fruit = "Apple";
+
+function first() {
+    const vegetable = "Spinach";
+    console.log("fruit;", fruit);
+    console.log("vegetable;", vegetable);
+    console.log("legume;", legume);
+    
+}
+
+function second() {
+    const legume = "Beans"
+    console.log("fruit;", fruit);
+    console.log("vegetable;", vegetable);
+    console.log("legume", legume);
+}
+
+first();
+second();
+
+//Both first() and second() have access to fruit, but first() cannot access legume and second() cannot access vegetable in the above scope demonstration.
+//This is because both are first level scopes.
+
+const myRav = 46;
+
+function myFu() {
+    const myRav = 7000;
+    return myRav;
+}
+myFu(); // Here the global variable identifier  has been assigned the value of the similar identifiers value of 7000 since it has been declared within the local scope of the function myFu.
+// The const myRav within myFu is the one that the engine will recognize as it cannot continue going far up beyond the function scope.
+
+
+const myAr = "Foo"
+
+function firs() {
+    console.log("Inside firs()");
+    console.log("MyAr is currently equal to:", myAr);
+}
+function secon() {
+    const myAr = "Bar"
+
+    firs();
+}
+secon();
+
+//ARRAYS AND OBJECTS.
+
+//A data structure is a means of associating anf organizing information
+
+// the following is an array; 
+['This', 'is', 'an', 'array.'];
+
+//We can assign an array to a variable;
+const evenNumbers = [2,4,6,8,10,12];
+
+//We can find out how many elements an array contains using the length property;
+const myArray = ['a','very','lengthy',false , 'array']  // this is an array literal syntax.
+myArray.length; //this gives 5.
+
+//Below is a demonstration of how Arrays are effective at organizing information beyond the array literal method.
+
+const winningNumbers = [3,6,5,1,8,0,8,4]
+
+function logWinningNumbers(numbers) {
+    console.log("winning numbers:", numbers);
+}
+logWinningNumbers(winningNumbers);
+
+//Accessing an element in an array
+
+let goodNumbers = [4,5,6];
+goodNumbers[0]; // this is the index for 4
+
+const alphabet = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+  // => undefined
+  
+  alphabet.length;
+  // => 26
+  
+  alphabet[alphabet.length - 1];
+  // => "z"
+  //We placed an expression (alphabet.length - 1) inside the square brackets, and the JavaScript engine computed the value of that expression to determine which element we were trying to access. In this case, alphabet.length - 1 evaluated to 25, so alphabet[alphabet.length - 1] became alphabet[25].
+//We  can update the value of an element in an array using square brackets and an assignment operator as seen below;
+const planets = ['Mercury','Venus','Earth','Mars','Juptier','Saturn','Uranus','Neptune','Pluto']; // we access the planet we want, ['Juptier'] and reassign the element's value using =
+
+planets[4] = 'Jupiter';
+//We are not able to reassign the array itself but we are able to reassign its elements.
+
+const chronicallyNestedArray = ['how',['deep',['can',['we',['go',['?'],'pretty'],'dang'],'deep'],'it'],'seems.',]; //Adding an extra set of brackets helps us access an array within an array as such;
+chronicallyNestedArray[1][3];
+
+//Brief mutability demonstration
+const salutation = "Hello";
+salutation.toUpperCase(); //=> SALUTATION.
+salutation; //=> "Hello"
+
+//Array Methods
+//.push() and .unshift() are both methods used to add elements into an array.
+//.push() adds to the end while .unshift() adds an element to the beginning of the array;
+
+const superheroes = ["Hulk","Thor","Sentry","SilverSurfer"];
+superheroes.push("Franklin Richard"); //adds "Franklin Richards" to the end of the array.
+
+const cities = ["Nairobi","Kisumu","Nakuru",];
+cities.unshift("Dodoma");// adds "Dodoma" to the beginning of the array.
+
+//Spread Operator; (...) helps 'spread out' the elements of an existing array into a new array creating a copy as seen below;
+const goodFood = ["Chapatti","Matumbo","Pilau"];
+const copyOfGoodFood = [...goodFood];  //this has made a whole copy of the variable 'goodFood' array value.
+
+//Add Elements To An Array.
+//adding an element to the front of an Array using a Spread Operator.
+
+const goodDrinks = ["Soda","Passion","Mango",];
+const allDrinks = [...goodDrinks, "Water","Red Bull"] //=> adds all the components of goodDrinks to the front of allDrinks
+
+//adding an element to the back of an Array using a Spread Operator.
+const sneakers = ["Nike","Jordans","Puma"];
+const allShoes = ["Loafers","Boots","Brogues",...sneakers]; //=> adds all the components of sneakers to the back of allShoes.
+
+//Removing Elements From An Array.
+//We use .pop() to remove an element from the end of an array, an .shift() to remove an element from the beginning of an array.
+
+const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+days.pop();
+// => "Sun"
+
+days;
+// => ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"] "Sun" has been removed.
+
+const Days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+days.shift();
+// => "Mon"
+
+days;
+// => [Tue", "Wed", "Thu", "Fri", "Sat", "Sun"] "Mon" has been removed.
+
+//USing .slice() removes elements from an Array non destructively.
+//If we don't provide an argument , then .slice() will return a copy of the array unaffected.
+const primes = [2, 3, 5, 7];
+
+const copyOfPrimes = primes.slice();
+
+primes;
+// => [2, 3, 5, 7]
+
+copyOfPrimes;
+// => [2, 3, 5, 7]`
+
+// applying .slice()with an argument;
+const daYs = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+ daYs.slice(2,5);
+ //We can also provide one or two arguments to .slice(): the first is the index where the slice should begin and the second is the index before which it should end:
+ //If no second argument is provided, the slice will run from the index specified to the end of the array.
+ //Negative indexes tells JavaScript to start counting the elements from the last end of the array as seen below;
+
+ daYs.slice(-1); //> gives us "Sunday"
+ daYs.slice(-3); //> gives us "Friday", "Saturday", "Sunday".
+ daYs.slice(0,-3);//> gives us all the days minus the last array element: Monday to Saturday minus Sunday.
+
+ //Using .splice();
+ //.splice() allows us to remove elements, add elements, or replace elements (or any combination of the three).They are destructive to arrays.
+ days.splice(2);
+// => ["Wed", "Thu", "Fri", "Sat", "Sun"] => Monday and Tuesday have been completely removed.
+
+days;
+// => ["Mon", "Tue"]
+//We can also use a negative same as with .slice();
+days.splice(-2);
+// => ["Sat", "Sun"]
+
+days;
+// => ["Mon", "Tue", "Wed", "Thu", "Fri"]
+
+//When we provide two arguments to .splice(), the first is still the index at which to begin splicing, and the second dictates how many elements we want to remove from the Array. For example, to remove 3 elements, starting with the element at index 2 as seen below;
+days.splice(2, 3);
+// => ["Wed", "Thu", "Fri"]
+
+days;
+// => ["Mon", "Tue", "Sat", "Sun"] =>removed "Wed", "Thu", "Fri".
+
+//Replacing elements in ana array using .splice();
+// array.splice(start, deleteCount, item1, item2, ...) is what we use to remove and replace elements in an array.
+const cards = [
+    "Ace of Spades",
+    "Jack of Clubs",
+    "Nine of Clubs",
+    "Nine of Diamonds",
+    "Three of Hearts",
+  ];
+  
+  cards.splice(2, 1, "Ace of Clubs");
+  // => ["Nine of Clubs"]
+  
+  cards;
+  // => ["Ace of Spades", "Jack of Clubs", "Ace of Clubs", "Nine of Diamonds", "Three of Hearts"]
+
+  //We can add 0 as the second argument in an array to add an element to an array at any point.
+  cards.splice(2, 0, "Queen of Hearts", "Queen of Diamonds");
+  // we use bracket notation to replace elements in an array.
+  cards[2] = "Queen of Hearts";
+
+//JavaScript Objects;
+//Objects are used to store information in a way that is more efficient than using an array.
+const object = {}; //empty objects.
+const obj = {name: "Chimano"}; //object with a single property.
+// We use commas to separate multiple values.
+const obj2 = {
+    name: "Alfaa",
+    age: 30,
+    isAlive: true,
+}
+//We can have nested objects within values;
+const obj3 = {
+    name: "Alfa",
+    age: 30,
+    isAlive: true,
+    address: {
+        city: "Nairobi",
+        country: "Kenya",
+    },
+};
+
+//Multiple properties can have the same values. If the same key is used for multiple properties, only the final value will be retained.
+const meals = {
+    breakfast: "Avocado Toast",
+    breakfast: "Bacon",
+    breakfast: "Oatmeal",
+    breakfast: "Scrambled eggs",
+}
+meals; //=> {breakfast: "Scrambled eggs"}.. The last key will be provided as input.
+//We can access the value of an object using dot notation.
+meals.breakfast;//=> gives  the value of the key breakfast which is "Avocado Toast" e.t.c
+//To access a value nested inside the inner object of a key, we simply append the inner key again using dot notation;
+obj3.address.city;//=> gives the appended value "Nairobi"
+
+//Bracket Notation;
+// You can access key values just as with the dot operator but with bracket notation. The keys are presented as strings within the brackets to get the value.
+obj3["name"]; //=>"Alfa"
+obj3["address"]["city"]; //=>"Nairobi" and so forth. This is a bit harder to read than dot notation and I should always stick to dot notation.
+
+
+//Accessing Properties Dynamically.
+//Bracket notation also help us compute the value of variables on the fly;
+const dishes = {
+    breakfast: "Oatmeal",
+    lunch: "Pilau",
+    dinner: "Chapatti",
+}
+
+let mealName = "breakfast";//=> calls the key "breakfast" as a value.
+dishes[mealName]; //=> returns the value "Oatmeal"
+
+//JavaScript's Object Methods;
+//We can get the list of top level keys in an object using the Object.keys() method;
+const alfaMenu = {
+    breakfast: "Oatmeal",
+    lunch: "Pilau",
+    dinner: "Chapatti",
+}
+Object.keys(alfaMenu);//=> gives us an array of the keys in the object ["breakfast", "lunch", "dinner"]
+
+
+//Object.values(); helps us get the values of the keys in an object;
+Object.values(alfaMenu);//=> gives us an array of the values in the object ["Oatmeal", "Pilau", "Chapatti"]
+
+//Modifying Objects
+//We can add a new property to an object using the dot notation or Bracket Notation;
+const circle = {};
+circle.radius = 10; // this creates key inside circle and sets its value to 10 using the dot notation.
+circle; //=> {radius: 10}
+circle["diameter"] = 20; // this creates key inside circle and sets its value to 20, using the bracket notation.
+circle.circumference = circle.diameter * Math.PI;
+circle["area"] = Math.PI * circle.radius ** 2;
+
+
+//We can update or overwrite existing properties simply by assigning a new value to an existing key:
+const mondayMenu = {
+    cheesePlate: {
+      soft: "Chèvre",
+      semiSoft: "Gruyère",
+      hard: "Manchego",
+    },
+    fries: "Curly",
+    salad: "Cobb",
+  };
+  
+  mondayMenu.fries = "Sweet potato";//=> replaced the value of the key "fries" with "Sweet potato".
+  
+  mondayMenu;
+  //=> { cheesePlate: { soft: "Chèvre", semiSoft: "Gruyère", hard: "Manchego" }, fries: "Sweet potato", salad: "Cobb" }
+
+  //JavaScript  Loops.
+  //For Loop
+  for ([initialization]; [condition]; [iteration]) {
+    [loopbody]
+  }
+//Initialization is used to initialize a counter variable.
+//Condition is used to determine when the loop should stop;If this expression evaluates to true, the statements in the loop body are executed. If the expression evaluates to false, the loop exits.
+//Iteration is used to modify the counter variable in each iteration.
+//Loopbody is the code that will be executed in each iteration.
+for (let i = 0; i < 587; i++) {
+    const element = array[i];
+    
+}
+
+
+//THE DOM
+//The Document Object Model (DOM) is used in Programming to create and modify content that users see in their browsers and add interactivity to our web pages.
+//The window object represents the browser window. The document object represents the HTML document.
+window.innerHeight; //=> gives the height of the window.
+
+document.URL; //=> gives the URL of the current document. As an object, "document" has properties.
+document.querySelector("h1"); //=> gives the first element that matches the specified CSS selector. this represents "document" methods.
+//Select an Element With JavaScript
+document.querySelector("h1"); //=>this selects the element with the tag "h1".
+
+//Delete an Element with JavaScript;
+document.querySelector("h1").remove(); //=>this deletes the element with the tag "h1".
+
+//Storing Node References in Variables
+const header = document.querySelector("h1"); //=> Query methods are expressions that return a value.
+
+//Finding HTML Elements for Dom; class and id attributes makes the node and its  easier to locate 
+
+//Finding Nodes;
+getElementById("myId"); //=> returns the node with the id "myId"
+
+
+getElementsByCLassName("myClass"); //=> returns a collection of nodes with the class "myClass"
+
+
+
+getElementsByTagName("h1"); //=> returns a collection of nodes with the tag "h1"
+
+const main = document.getElementsByTagName("main")[0];
+const secondChild = main.children[1];
+const p = secondChild.getElementsByTagName("p")[0];
+p.textContent = "Hello World";
+console.log(p.textContent = "Hello World");
